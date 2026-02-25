@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Vijay Motor Works | Heavy Vehicle Experts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="overlay" onclick="toggleSidebar()"></div>
+
+    <nav class="top-bar">
+        <div class="nav-left">
+            <button class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+        </div>
+        
+        <div class="logo-center">VIJAY MOTOR WORKS</div>
+
+        <div class="nav-right">
+            <div class="lang-wrapper">
+                <i class="fas fa-globe"></i>
+                <select id="language-picker" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="bn">বাংলা</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-layout">
+        
+        <main class="main-content">
+            <header class="hero">
+                <h1 id="hero-title">Heavy Vehicle Repair & Servicing List</h1>
+                <p id="hero-sub">Specializing in Trucks, Lorries, Buses, Dumpers & Trailers</p>
+            </header>
+
+            <div id="service-container" class="service-grid">
+                <div class="instruction-box">
+                    <i class="fas fa-hand-pointer"></i>
+                    <h3 id="instruction-text">Please select a category from the right sidebar to view services.</h3>
+                </div>
+            </div>
+
+            <section class="review-section">
+                <h2 id="review-title">Customer Reviews</h2>
+                <div class="review-container">
+                    
+                    <div class="review-form">
+                        <h3>Write a Review</h3>
+                        <input type="text" id="rev-user" placeholder="Your Name">
+                        <div class="star-rating" id="star-box">
+                            <span onclick="setStar(1)">★</span><span onclick="setStar(2)">★</span><span onclick="setStar(3)">★</span><span onclick="setStar(4)">★</span><span onclick="setStar(5)">★</span>
+                        </div>
+                        <textarea id="rev-comment" placeholder="Leave your feedback..."></textarea>
+                        <button onclick="saveReview()" class="submit-btn">Submit Review</button>
+                    </div>
+
+                    <div class="all-reviews-wrapper">
+                        <div class="reviews-header">
+                            <h3>What Others Say</h3>
+                            <button onclick="toggleReviews()" class="view-all-btn">View All Reviews <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div id="reviews-output" class="hidden"></div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3 id="sidebar-label">Select Category</h3>
+                <button class="close-btn" onclick="toggleSidebar()"><i class="fas fa-times"></i></button>
+            </div>
+            <ul id="category-list">
+                <li onclick="filterServices('Engine', this)">Engine & Mechanical</li>
+                <li onclick="filterServices('Transmission', this)">Transmission & Drivetrain</li>
+                <li onclick="filterServices('Brakes', this)">Brake System</li>
+                <li onclick="filterServices('Suspension', this)">Suspension & Steering</li>
+                <li onclick="filterServices('Electrical', this)">Electrical & Wiring</li>
+                <li onclick="filterServices('Cooling', this)">Cooling & Lubrication</li>
+                <li onclick="filterServices('Body', this)">Body & Chassis</li>
+                <li onclick="filterServices('Tyre', this)">Tyre & Wheel</li>
+                <li onclick="filterServices('Special', this)">Special Services</li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> contact@vijaymotorworks.com</p>
+            </div>
+            <hr class="footer-line">
+            <p class="copyright">&copy; 2026 Vijay Motor Works. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@VijayMotorWorks" target="_blank" class="yt"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61567637715785" target="_blank" class="fb"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/vijay_motor_works/" target="_blank" class="ig"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com" target="_blank" class="tw"><i class="fab fa-twitter"></i></a>
+                <a href="https://maps.app.goo.gl/z7iHMCKLtFbTXHfH7" target="_blank" class="gm" title="Our Location"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
